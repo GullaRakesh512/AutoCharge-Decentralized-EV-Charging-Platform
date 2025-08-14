@@ -78,3 +78,60 @@ Open a **new terminal** and start the Hardhat blockchain node. This terminal mus
 
 ```bash
 npx hardhat node
+This will display a list of 20 test accounts, their balances, and their private keys.
+
+Step 2: Deploy the Smart Contract
+Open a second terminal. Deploy the AutoCharge.sol contract to the local node.
+
+Bash
+
+npx hardhat run scripts/deploy.js --network localhost
+The terminal will output a contract address (e.g., 0x5FbDB2315678afecb367f032d93F642f64180aa3). Copy this new address.
+
+Step 3: Update the Contract Address
+In your simulation.js file, paste the newly deployed contract address into the contractAddress variable.
+
+JavaScript
+
+// In simulation.js
+const contractAddress = "PASTE_YOUR_NEW_ADDRESS_HERE";
+Step 4: Run the MATLAB Simulation
+Open MATLAB.
+
+In the MATLAB window, navigate its "Current Folder" to your AutoChargeProject directory.
+
+Run the MATLAB simulation script by typing its name in the Command Window and pressing Enter:
+
+Matlab
+
+>> simulate_charging_code
+This will run the code and create/update the result.txt file in your project folder.
+
+Step 5: Run the Blockchain Script
+Return to your second terminal. Run the main simulation script. This script will read the result from MATLAB and complete the payment on the blockchain.
+
+Bash
+
+node simulation.js
+You will see the full log of the session starting, the energy value being read, and the final payment being processed, along with the initial and final balances of the station and EV.
+
+(Optional) Running the Frontend UI
+To interact with the dApp through a web interface:
+
+Install Live Server:
+
+Bash
+
+npm install -g live-server
+Navigate to the Frontend Directory:
+In your second terminal, move into the frontend folder.
+
+Bash
+
+cd frontend
+Start the Server:
+
+Bash
+
+live-server
+Your default browser will automatically open index.html. You can then interact with the dApp using your MetaMask wallet connected to the local Hardhat network.
