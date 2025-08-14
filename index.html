@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCharge EV Charging</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>⚡ AutoCharge</h1>
+        <p>Decentralized EV Charging Platform</p>
+
+        <div class="card">
+            <button id="connectWalletBtn">Connect Wallet</button>
+            <div id="status">Status: Please connect your wallet</div>
+        </div>
+
+        <div class="card" id="charging-controls" style="display: none;">
+            <h2>Charging Station</h2>
+            <p>Station Address: <span id="stationAddress"></span></p>
+            <button id="startSessionBtn">Start Charging Session</button>
+        </div>
+        
+        <div class="card" id="payment-controls" style="display: none;">
+            <h2>Payment</h2>
+            <div class="input-group">
+                <label for="kwhInput">Energy Consumed (kWh):</label>
+                <input type="number" id="kwhInput" placeholder="e.g., 15">
+            </div>
+            <button id="endSessionBtn">Pay & Stop Charging</button>
+        </div>
+
+    </div>
+
+    <!-- Import Ethers.js library -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+    <!-- Import your app logic -->
+    <script src="app.js"></script>
+</body>
+</html>
