@@ -5,7 +5,7 @@ AutoCharge is a proof-of-concept project that demonstrates a seamless, automated
 This simulation integrates a realistic electrical model from **MATLAB** with a decentralized backend running on a local **Hardhat** blockchain network, controlled by an **Ethers.js** script.
 
 ---
-
+Watch the video for better understanding (https://youtu.be/ZKnaKUDkE3c)
 ## Workflow
 
 The project simulates the entire charging process through a unique, hybrid workflow:
